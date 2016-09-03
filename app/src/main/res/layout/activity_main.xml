@@ -31,31 +31,39 @@
         android:id="@+id/linearLayout">
 
         <Button
+            android:id="@+id/offButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:onClick="onClick"
             android:background="@drawable/button_selector_first"/>
 
         <Button
+            android:id="@+id/aroundButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:onClick="onClick"
             android:background="@drawable/button_selector_second"/>
 
         <Button
+            android:id="@+id/mediaButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:onClick="onClick"
             android:background="@drawable/button_selector_third"/>
 
         <Button
+            android:id="@+id/profileButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:onClick="onClick"
             android:background="@drawable/button_selector_fourth"/>
 
 
