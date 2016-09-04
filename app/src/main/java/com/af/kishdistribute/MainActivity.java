@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_media = (Button) findViewById(R.id.mediaButton);
         bt_profile = (Button) findViewById(R.id.profileButton);
 
+        offFragment = new OffFragment().newInstance();
 
         fm = getFragmentManager();
         if (fm != null) {
-            offFragment = new OffFragment().newInstance();
             fm.beginTransaction().replace(R.id.detail_fragment, offFragment).addToBackStack(null).commit();
         }
 
@@ -47,12 +47,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        FragmentTransaction ft;
         switch (v.getId()) {
             case R.id.offButton:
                 bt_off.setBackgroundResource(R.drawable.first_sel);
                 bt_around.setBackgroundResource(R.drawable.second);
                 bt_media.setBackgroundResource(R.drawable.third);
                 bt_profile.setBackgroundResource(R.drawable.fourth);
+
+//                offFragment = new OffFragment().newInstance();
+                ft = getFragmentManager().beginTransaction();
+//                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
+                ft.replace(R.id.detail_fragment, offFragment).commit();
+
                 break;
             case R.id.aroundButton:
                 bt_off.setBackgroundResource(R.drawable.first);
@@ -60,10 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_media.setBackgroundResource(R.drawable.third);
                 bt_profile.setBackgroundResource(R.drawable.fourth);
 
-                mapsActivity = new MapsActivity().newInstance();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
-                ft.add(R.id.detail_fragment, mapsActivity).commit();
+                if (mapsActivity == null) {
+                    mapsActivity = new MapsActivity().newInstance();
+                }
+                ft = getFragmentManager().beginTransaction();
+//                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
+                ft.replace(R.id.detail_fragment, mapsActivity).commit();
                 break;
             case R.id.mediaButton:
                 bt_off.setBackgroundResource(R.drawable.first);
