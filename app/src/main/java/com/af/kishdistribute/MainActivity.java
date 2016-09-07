@@ -85,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_around.setBackgroundResource(R.drawable.second);
                 bt_media.setBackgroundResource(R.drawable.third);
                 bt_profile.setBackgroundResource(R.drawable.fourth_sel);
+
+
+
+
+
                 break;
             default:
                 break;
