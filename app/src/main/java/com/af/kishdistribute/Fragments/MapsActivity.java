@@ -55,8 +55,12 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                 googleMap.setMyLocationEnabled(true);
 
                 // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(26.530242, 53.986250);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+                LatLng sydney = new LatLng(26.525996, 54.037617);
+                LatLng sydney1 = new LatLng(26.542349, 54.019180);
+                LatLng sydney2 = new LatLng(26.517073, 54.041722);
+                googleMap.addMarker(new MarkerOptions().position(sydney).title("مرکز خرید مرجان").snippet("Marker Description"));
+                googleMap.addMarker(new MarkerOptions().position(sydney1).title("مرکز تجاری کیش").snippet("Marker Description"));
+                googleMap.addMarker(new MarkerOptions().position(sydney2).title("شاندیز صفدری").snippet("Marker Description"));
 
                 // For zooming automatically to the location of the marker
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
@@ -82,8 +86,13 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         this.googleMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(26.525996, 54.037617);
+        LatLng sydney1 = new LatLng(26.542349, 54.019180);
+        LatLng sydney2 = new LatLng(26.517073, 54.041722);
+        googleMap.addMarker(new MarkerOptions().position(sydney).title("مرکز خرید مرجان").snippet("Marker Description"));
+        googleMap.addMarker(new MarkerOptions().position(sydney1).title("مرکز تجاری کیش").snippet("Marker Description"));
+        googleMap.addMarker(new MarkerOptions().position(sydney2).title("شاندیز صفدری").snippet("Marker Description"));
+
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

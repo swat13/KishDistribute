@@ -10,53 +10,30 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.af.kishdistribute.MainActivity;
 import com.af.kishdistribute.R;
 
-import static android.content.ContentValues.TAG;
-
-public class OffFragment extends Fragment {
+public class Off_Detail_Fragment extends Fragment {
 
 
-    public static OffFragment newInstance() {
-        OffFragment fragmentDemo = new OffFragment();
+    public static Off_Detail_Fragment newInstance() {
+        Off_Detail_Fragment fragmentDemo = new Off_Detail_Fragment();
         return fragmentDemo;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.activity_off, null);
+        View v = inflater.inflate(R.layout.activity_off_detail, null);
 
         ImageView imageView = (ImageView) v.findViewById(R.id.im1);
-        ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
-        ImageView imageView2 = (ImageView) v.findViewById(R.id.im3);
-        ImageView imageView3 = (ImageView) v.findViewById(R.id.im4);
 
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-        Bitmap largeIcon2 = BitmapFactory.decodeResource(getResources(), R.drawable.pic2);
-        Bitmap largeIcon3 = BitmapFactory.decodeResource(getResources(), R.drawable.pic3);
-        Bitmap largeIcon4 = BitmapFactory.decodeResource(getResources(), R.drawable.pic4);
         imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,70));
-        imageView1.setImageBitmap(getRoundedCornerBitmap(largeIcon2,70));
-        imageView2.setImageBitmap(getRoundedCornerBitmap(largeIcon3,70));
-        imageView3.setImageBitmap(getRoundedCornerBitmap(largeIcon4,70));
-
-
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "onClick: 0000000000" );
-                ((MainActivity) getActivity()).showDetail();
-            }
-        });
-
 
 
         return v;
@@ -85,8 +62,6 @@ public class OffFragment extends Fragment {
 
         return output;
     }
-
-
 
 
 }

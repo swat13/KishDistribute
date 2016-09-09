@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.af.kishdistribute.Fragments.MapsActivity;
+import com.af.kishdistribute.Fragments.MediaFragment;
 import com.af.kishdistribute.Fragments.OffFragment;
+import com.af.kishdistribute.Fragments.Off_Detail_Fragment;
 import com.af.kishdistribute.Fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -16,8 +18,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public OffFragment offFragment;
     public MapsActivity mapsActivity;
     public ProfileFragment profileFragment;
+    public Off_Detail_Fragment off_detail_fragment;
+    public MediaFragment mediaFragment;
     private Button bt_off,bt_around,bt_media, bt_profile;
     FragmentManager fm;
+    public boolean frag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        if (frag) {
+            bt_off.setBackgroundResource(R.drawable.first_sel);
+            bt_around.setBackgroundResource(R.drawable.second);
+            bt_media.setBackgroundResource(R.drawable.third);
+            bt_profile.setBackgroundResource(R.drawable.fourth);
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.detail_fragment, offFragment).commit();
+            frag = false;
+        }
+        else
+            finish();
     }
 
     @Override
@@ -56,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_around.setBackgroundResource(R.drawable.second);
                 bt_media.setBackgroundResource(R.drawable.third);
                 bt_profile.setBackgroundResource(R.drawable.fourth);
-
 //                offFragment = new OffFragment().newInstance();
                 ft = getFragmentManager().beginTransaction();
 //                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
@@ -81,6 +94,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_around.setBackgroundResource(R.drawable.second);
                 bt_media.setBackgroundResource(R.drawable.third_sel);
                 bt_profile.setBackgroundResource(R.drawable.fourth);
+
+                if (mediaFragment == null) {
+                    mediaFragment = new MediaFragment().newInstance();
+                }
+                ft = getFragmentManager().beginTransaction();
+//                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
+                ft.replace(R.id.detail_fragment, mediaFragment).commit();
+
+
                 break;
             case R.id.profileButton:
 
@@ -106,4 +128,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    public void showDetail() {
+        frag = true;
+        if (off_detail_fragment == null) {
+            off_detail_fragment = new Off_Detail_Fragment().newInstance();
+        }
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
+        ft.replace(R.id.detail_fragment, off_detail_fragment).commit();
+    }
+
 }

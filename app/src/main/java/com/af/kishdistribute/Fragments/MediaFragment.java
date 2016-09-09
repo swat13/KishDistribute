@@ -10,22 +10,18 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.af.kishdistribute.MainActivity;
 import com.af.kishdistribute.R;
 
-import static android.content.ContentValues.TAG;
-
-public class OffFragment extends Fragment {
+public class MediaFragment extends Fragment {
 
 
-    public static OffFragment newInstance() {
-        OffFragment fragmentDemo = new OffFragment();
+    public static MediaFragment newInstance() {
+        MediaFragment fragmentDemo = new MediaFragment();
         return fragmentDemo;
     }
 
@@ -47,16 +43,6 @@ public class OffFragment extends Fragment {
         imageView1.setImageBitmap(getRoundedCornerBitmap(largeIcon2,70));
         imageView2.setImageBitmap(getRoundedCornerBitmap(largeIcon3,70));
         imageView3.setImageBitmap(getRoundedCornerBitmap(largeIcon4,70));
-
-
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "onClick: 0000000000" );
-                ((MainActivity) getActivity()).showDetail();
-            }
-        });
-
 
 
         return v;
@@ -85,8 +71,6 @@ public class OffFragment extends Fragment {
 
         return output;
     }
-
-
 
 
 }

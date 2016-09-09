@@ -35,9 +35,7 @@ public class ProfileFragment extends Fragment {
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.profile_images);
         imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,300));
 
-
         return v;
-
     }
 
 
