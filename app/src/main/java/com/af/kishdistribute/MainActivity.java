@@ -9,11 +9,13 @@ import android.widget.Button;
 
 import com.af.kishdistribute.Fragments.MapsActivity;
 import com.af.kishdistribute.Fragments.OffFragment;
+import com.af.kishdistribute.Fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     public OffFragment offFragment;
     public MapsActivity mapsActivity;
+    public ProfileFragment profileFragment;
     private Button bt_off,bt_around,bt_media, bt_profile;
     FragmentManager fm;
 
@@ -81,6 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_profile.setBackgroundResource(R.drawable.fourth);
                 break;
             case R.id.profileButton:
+
+                if (profileFragment == null) {
+                    profileFragment = new ProfileFragment().newInstance();
+                }
+                ft = getFragmentManager().beginTransaction();
+//                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
+                ft.replace(R.id.detail_fragment, profileFragment).commit();
+
                 bt_off.setBackgroundResource(R.drawable.first);
                 bt_around.setBackgroundResource(R.drawable.second);
                 bt_media.setBackgroundResource(R.drawable.third);

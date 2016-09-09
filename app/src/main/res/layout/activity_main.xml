@@ -25,15 +25,14 @@
         android:orientation="horizontal"
         android:gravity="center"
         tools:layout_editor_absoluteX="0dp"
-        android:background="@drawable/gradient_background"
         app:layout_constraintBottom_toBottomOf="@+id/activity_main"
         android:layout_marginBottom="16dp"
         android:id="@+id/linearLayout">
 
         <Button
             android:id="@+id/offButton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:onClick="onClick"
@@ -41,8 +40,8 @@
 
         <Button
             android:id="@+id/aroundButton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:onClick="onClick"
@@ -50,8 +49,8 @@
 
         <Button
             android:id="@+id/mediaButton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:onClick="onClick"
@@ -59,8 +58,8 @@
 
         <Button
             android:id="@+id/profileButton"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:onClick="onClick"

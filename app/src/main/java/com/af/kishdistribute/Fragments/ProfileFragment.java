@@ -28,21 +28,12 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.activity_off, null);
+        View v = inflater.inflate(R.layout.activity_profile, null);
 
-        ImageView imageView = (ImageView) v.findViewById(R.id.im1);
-        ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
-        ImageView imageView2 = (ImageView) v.findViewById(R.id.im3);
-        ImageView imageView3 = (ImageView) v.findViewById(R.id.im4);
+        ImageView imageView = (ImageView) v.findViewById(R.id.profile_image);
 
-        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-        Bitmap largeIcon2 = BitmapFactory.decodeResource(getResources(), R.drawable.pic2);
-        Bitmap largeIcon3 = BitmapFactory.decodeResource(getResources(), R.drawable.pic3);
-        Bitmap largeIcon4 = BitmapFactory.decodeResource(getResources(), R.drawable.pic4);
-        imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,70));
-        imageView1.setImageBitmap(getRoundedCornerBitmap(largeIcon2,70));
-        imageView2.setImageBitmap(getRoundedCornerBitmap(largeIcon3,70));
-        imageView3.setImageBitmap(getRoundedCornerBitmap(largeIcon4,70));
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.profile_images);
+        imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,300));
 
 
         return v;
