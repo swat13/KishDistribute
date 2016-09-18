@@ -25,7 +25,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         MapsActivity mapsActivity = new MapsActivity();
         return mapsActivity;
     }
-
+//یبی
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
