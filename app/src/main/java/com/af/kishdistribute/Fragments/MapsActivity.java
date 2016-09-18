@@ -52,7 +52,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
                 googleMap = mMap;
 
                 // For showing a move to my location button
-                googleMap.setMyLocationEnabled(true);
+                googleMap.setMyLocationEnabled(false);
 
                 // For dropping a marker at a point on the Map
                 LatLng sydney = new LatLng(26.525996, 54.037617);

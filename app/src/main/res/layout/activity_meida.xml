@@ -19,8 +19,21 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:id="@+id/videoView" />
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:id="@+id/videoView2" />
 
-            <ImageView
+            <![CDATA[
+
+
+
+
+            ImageView
                 android:id="@+id/im1"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
@@ -32,42 +45,7 @@
                 android:src="@drawable/pic1" />
 
 
-            <ImageView
-                android:id="@+id/im2"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="15dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/pic2" />
-
-            <ImageView
-                android:id="@+id/im3"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="15dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/pic3" />
-
-            <ImageView
-                android:id="@+id/im4"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="15dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/pic4" />
-
-
-        </LinearLayout>
+            ]]></LinearLayout>
 
     </ScrollView>
 
