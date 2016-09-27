@@ -109,9 +109,31 @@ public class OffFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "onClick: 0000000000" );
-                ((MainActivity) getActivity()).showDetail();
+                ((MainActivity) getActivity()).showDetail(1);
             }
         });
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "onClick: 0000000000" );
+                ((MainActivity) getActivity()).showDetail(2);
+            }
+        });
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "onClick: 0000000000" );
+                ((MainActivity) getActivity()).showDetail(3);
+            }
+        });
+        imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "onClick: 0000000000" );
+                ((MainActivity) getActivity()).showDetail(4);
+            }
+        });
+
 
 
 

@@ -13,14 +13,14 @@ import com.af.kishdistribute.Fragments.OffFragment;
 import com.af.kishdistribute.Fragments.Off_Detail_Fragment;
 import com.af.kishdistribute.Fragments.ProfileFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public OffFragment offFragment;
     public MapsActivity mapsActivity;
     public ProfileFragment profileFragment;
     public Off_Detail_Fragment off_detail_fragment;
     public MediaFragment mediaFragment;
-    private Button bt_off,bt_around,bt_media, bt_profile;
+    private Button bt_off, bt_around, bt_media, bt_profile;
     FragmentManager fm;
     public boolean frag = false;
 
@@ -56,8 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.detail_fragment, offFragment).commit();
             frag = false;
-        }
-        else
+        } else
             finish();
     }
 
@@ -119,9 +118,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bt_profile.setBackgroundResource(R.drawable.fourth_sel);
 
 
-
-
-
                 break;
             default:
                 break;
@@ -129,11 +125,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void showDetail() {
+    public void showDetail(int i) {
         frag = true;
-        if (off_detail_fragment == null) {
-            off_detail_fragment = new Off_Detail_Fragment().newInstance();
-        }
+        off_detail_fragment = new Off_Detail_Fragment().newInstance(i);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
 //                ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right);
         ft.replace(R.id.detail_fragment, off_detail_fragment).commit();

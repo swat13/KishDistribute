@@ -10,6 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +28,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Off_Detail_Fragment extends Fragment {
 
-    private GoogleMap googleMap;
-    MapView mMapView;
-
-    public static Off_Detail_Fragment newInstance() {
+    static int type = 0;
+    public static Off_Detail_Fragment newInstance(int _type) {
         Off_Detail_Fragment fragmentDemo = new Off_Detail_Fragment();
+        type = _type;
         return fragmentDemo;
     }
 
@@ -40,46 +40,28 @@ public class Off_Detail_Fragment extends Fragment {
 
         View v = inflater.inflate(R.layout.activity_off_detail, null);
 
+        Log.e("%%%%%%", "onCreateView: "+type );
+
         ImageView imageView = (ImageView) v.findViewById(R.id.im1);
-
-        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
-        imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,70));
-
-        mMapView = (MapView) v.findViewById(R.id.mapView);
-        mMapView.onCreate(savedInstanceState);
-
-        mMapView.onResume(); // needed to get the map to display immediately
-
-        try {
-            MapsInitializer.initialize(getActivity().getApplicationContext());
-        } catch (Exception e) {
-            e.printStackTrace();
+        Bitmap largeIcon = null;
+        switch (type) {
+            case 1:
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic1);
+                break;
+            case 2:
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic2);
+                break;
+            case 3:
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic3);
+                break;
+            case 4:
+                largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.pic4);
+                break;
+            default:
+                break;
         }
-
-        mMapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap mMap) {
-                googleMap = mMap;
-
-                // For showing a move to my location button
-                googleMap.setMyLocationEnabled(false);
-
-                // For dropping a marker at a point on the Map
-                LatLng sydney = new LatLng(26.525996, 54.037617);
-                LatLng sydney1 = new LatLng(26.542349, 54.019180);
-                LatLng sydney2 = new LatLng(26.517073, 54.041722);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("مرکز خرید مرجان").snippet("Marker Description"));
-                googleMap.addMarker(new MarkerOptions().position(sydney1).title("مرکز تجاری کیش").snippet("Marker Description"));
-                googleMap.addMarker(new MarkerOptions().position(sydney2).title("شاندیز صفدری").snippet("Marker Description"));
-
-                // For zooming automatically to the location of the marker
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-            }
-        });
-
+        imageView.setImageBitmap(getRoundedCornerBitmap(largeIcon,70));
         return v;
-
     }
 
     public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {

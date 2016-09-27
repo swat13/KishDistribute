@@ -33,13 +33,13 @@ public class MediaFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.activity_meida, null);
 
-        final ImageView imageView = (ImageView) v.findViewById(R.id.im1);
-        final ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
+//        final ImageView imageView = (ImageView) v.findViewById(R.id.im1);
+//        final ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
 
 
-        VideoView videoView = (VideoView)v.findViewById(R.id.videoView);
+        /*VideoView videoView = (VideoView)v.findViewById(R.id.videoView);
         videoView.setVideoPath("/sdcard/blonde_secretary.3gp");
-        videoView.start();
+        videoView.start();*/
 
         /*Glide.with(getActivity())
                 .load(R.drawable.pic1)
