@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bt_off.setBackgroundResource(R.drawable.first_sel);
 
-
     }
 
     @Override

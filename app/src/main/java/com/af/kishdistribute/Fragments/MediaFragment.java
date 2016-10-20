@@ -9,6 +9,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -19,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.VideoView;
 
 import com.af.kishdistribute.R;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
 public class MediaFragment extends Fragment {
 
@@ -37,9 +40,17 @@ public class MediaFragment extends Fragment {
 //        final ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
 
 
-        /*VideoView videoView = (VideoView)v.findViewById(R.id.videoView);
-        videoView.setVideoPath("/sdcard/blonde_secretary.3gp");
-        videoView.start();*/
+//        getWindow().setFormat(PixelFormat.UNKNOWN);
+
+        //Displays a video file.
+        VideoView mVideoView = (VideoView)v.findViewById(R.id.videoView);
+
+
+        String uriPath = "android.resource://com.af.kishdistribute/"+R.raw.g;
+        Uri uri = Uri.parse(uriPath);
+        mVideoView.setVideoURI(uri);
+        mVideoView.requestFocus();
+        mVideoView.start();
 
         /*Glide.with(getActivity())
                 .load(R.drawable.pic1)
