@@ -37,20 +37,30 @@ public class MediaFragment extends Fragment {
         View v = inflater.inflate(R.layout.activity_meida, null);
 
 //        final ImageView imageView = (ImageView) v.findViewById(R.id.im1);
-//        final ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
+        final VideoView mVideoView = (VideoView) v.findViewById(R.id.videoView);
+        String uriPath = "android.resource://com.af.kishdistribute/"+R.raw.video1;
+        final Uri uri = Uri.parse(uriPath);
+
+        final ImageView imageView1 = (ImageView) v.findViewById(R.id.im2);
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mVideoView.setVisibility(View.VISIBLE);
+                imageView1.setVisibility(View.INVISIBLE);
+                mVideoView.setVideoURI(uri);
+                mVideoView.requestFocus();
+                mVideoView.start();
+            }
+        });
 
 
 //        getWindow().setFormat(PixelFormat.UNKNOWN);
 
         //Displays a video file.
-        VideoView mVideoView = (VideoView)v.findViewById(R.id.videoView);
 
 
-        String uriPath = "android.resource://com.af.kishdistribute/"+R.raw.g;
-        Uri uri = Uri.parse(uriPath);
-        mVideoView.setVideoURI(uri);
-        mVideoView.requestFocus();
-        mVideoView.start();
+
+
 
         /*Glide.with(getActivity())
                 .load(R.drawable.pic1)
